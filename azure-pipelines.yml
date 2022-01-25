@@ -33,6 +33,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-steps:
-- publish: $(System.DefaultWorkingDirectory)/bin/WebApp
-  artifact: WebApp    
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: $(System.DefaultWorkingDirectory)/bin/WebApp
+    artifactName: WebApp   
+    
+
