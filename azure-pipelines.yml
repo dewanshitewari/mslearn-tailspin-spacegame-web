@@ -33,6 +33,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-- steps:
+steps:
 - publish: $(System.DefaultWorkingDirectory)/bin/WebApp
   artifact: WebApp    
