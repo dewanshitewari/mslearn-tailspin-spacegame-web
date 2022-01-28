@@ -51,3 +51,10 @@ steps:
   condition: succeeded()
 
 - task: WhiteSource@20
+  inputs:
+    cwd: '$(Build.SourcesDirectory)'
+    extensions: '.*'
+    checkPolicies: 'SEND_ALERTS'
+    projectRule: 'projectName'
+    projectName: '$(Build.Repository.Name)'
+    failOnError: false
