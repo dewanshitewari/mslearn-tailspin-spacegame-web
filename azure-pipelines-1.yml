@@ -61,3 +61,17 @@ steps:
 - task: whitesource.whiteSource-bolt-v2.bolt.wss.WhiteSource@21
   displayName: WhiteSource
 
+- task: owaspzap@1
+  displayName: 'Owasp ZAP scan'
+  inputs:
+    threshold: '400'
+    scantype: 'targetedScan'
+    url: 'https://dewanshiapp1.azurewebsites.net'
+    port: '443'
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+   PathtoPublish: '$(Build.ArtifactStagingDirectory)/owaspzap'
+   ArtifactName: 'ZAP reports'
+   publishLocation: 'Container'
+  
