@@ -57,6 +57,6 @@ steps:
     command: 'test'
     arguments: 
 
-- task: WhiteSource@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
+
+- task: whitesource.whiteSource-bolt-v2.bolt.wss.WhiteSource@21
+  displayName: WhiteSource
